@@ -1,0 +1,27 @@
+Nome Repo: vue-boolflix
+
+
+Milestone 1
+Replica della grafica iniziale con una Nav-Bar iniziale ed una barra di ricerca, con una scritta "Non ci sono risultati per la tua ricerca" all'interno del Main.
+Lavorare con la nostra API creata sul sito TMBD, dove dovrai registrarti.
+Es. API https://api.themoviedb.org/3/movie/550?api_key=9964fc9b74576c3b3bee38b618120d0a .
+Usare Vue e Vite creando vari componenti per rendere il lavoro più semplice.
+
+
+
+Milestone 2
+Visualizzazione dei film legati alla ricerca della nostra Search-bar.
+
+
+Milestone 3
+Aggiunta di un carosello d'img legati alla nostra API.
+Es. Most Popular Film.
+
+Bonus
+Dopo aver svolto le prime 3 milestone, a lavoro completato, rendere migliore graficamente il tutto:
+-Jumbo;
+-Loading nel momento di ricerca;
+-Studiare l'API
+
+
+

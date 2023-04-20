@@ -7,8 +7,10 @@ export const store = reactive({
   api_key: "?api_key=9964fc9b74576c3b3bee38b618120d0a",
   searchFilm: "search/movie",
   searchTv : "search/tv",
+  searchMostP: '/movie/popular',
   card: {
     query: "",
   },
   shows: [],
+  films: [],
 });

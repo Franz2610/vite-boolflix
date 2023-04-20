@@ -4,12 +4,11 @@
         <img class="logo" src="/download.png" alt="boolflix" />
       </div>
       <div>
-        <NavUl />
+          <NavUl />
       </div>
-      <div class="search-zone">
-        <input type="text" name="searchBar" id="searchBar" placeholder="Cerca il tuo film" class="rounded-2 p-1" @input="search" v-model.trim="store.card.query"
-        />
-        <button class="btn btn-danger m-4" @click="search">Cerca</button>
+      <div class="">
+          <input type="text" name="searchBar" id="searchBar" placeholder="Cosa ti piacerebbe vedere?" class="rounded-3" @input="search" v-model.trim="store.card.query" />
+          <button class="btn btn-danger m-4" @click="search">Cerca</button>
       </div>
     </header>
 </template>

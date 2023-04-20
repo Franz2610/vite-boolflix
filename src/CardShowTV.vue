@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3 mt-2">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3 mt-2" v-for="card in store.shows" :key="card.shows.id" :card="card.shows">
         <div class="card">
             <div class="card-head text-center">
                 <h3>{{ card.title }}</h3>
@@ -16,7 +16,7 @@
   
   <script>
   export default {
-    name: "CardShow",
+    name: "CardShowTV",
     props: ["card"],
   }
 </script>

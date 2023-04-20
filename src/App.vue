@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <HeaderApp @Search="searchFilm" />
+    <HeaderApp @Search-film="searchFilm"  @Search-tv="searchTV"/>
     <MainApp />
   </div>
 </template>
@@ -24,19 +24,35 @@ export default {
   methods: {
     searchFilm() {
       const urlF = store.baseUrl + store.searchFilm + store.api_key + store.endPoint;
-      const urlS = store.baseUrl + store.searchTv+ store.api_key + store.endPoint;
+
       let searched = {};
       let params = {};
-      for (let key in store.card) {
-        if (store.card[key]) {
-          params[key] = store.card[key];
+      for (let key in store.films) {
+        if (store.films[key]) {
+          params[key] = store.films[key];
         }
         if (Object.keys(params).length > 0) {
           searched.params = params;
         }
       }
       axios.get(urlF, searched).then((res) => {
-        store.card = res.data.results;
+        store.card.films = res.data.results;
+      });
+    },
+    searchTV() {
+      const urlS = store.baseUrl + store.searchTv+ store.api_key + store.endPoint;
+      let searched = {};
+      let params = {};
+      for (let key in store.shows) {
+        if (store.card.shows[key]) {
+          params[key] = store.shows[key];
+        }
+        if (Object.keys(params).length > 0) {
+          searched.params = params;
+        }
+      }
+      axios.get(urlS, searched).then((res) => {
+        store.shows = store.films.concat(res.data.results);
       });
     },
   },

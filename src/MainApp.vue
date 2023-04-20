@@ -5,7 +5,10 @@
       </h2>
       <div class="container">
         <div class="row">
-          <CardShow v-for="card in store.card" :key="card.id" :card="card"/>
+          <CardShowFilm/>
+        </div>
+        <div class="row">
+          <CardShowFilm/>
         </div>
       </div>
     </main>
@@ -13,13 +16,15 @@
   
   <script>
   import { store } from "./store";
-  import CardShow from "./CardShow.vue";
+import CardShowFilm from "./CardShowFilm.vue";
+import CardShowTV from "./CardShowTV.vue";
   
   export default {
     name: "MainApp",
     components: {
-      CardShow,
-    },
+    CardShowFilm,
+    CardShowTV
+},
     data() {
       return {
         store,

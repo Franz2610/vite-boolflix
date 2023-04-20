@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3 mt-2" v-for="film in store.films" :key="film.id" :film="film">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3 mt-2" v-for="film in store.films" :key="film.id" :films="film">
         <div class="card">
             <div class="card-head text-center">
                 <h3>{{ film.title }}</h3>
@@ -18,7 +18,7 @@
   import { store } from "./store";
   export default {
     name: "CardShowFilm",
-    props: ["film"],
+    props: ["films"],
     data() {
       return {
         store,

@@ -8,7 +8,7 @@
           <CardShowFilm/>
         </div>
         <div class="row">
-          <CardShowFilm/>
+          <CardShowTV/>
         </div>
       </div>
     </main>
@@ -16,8 +16,8 @@
   
   <script>
   import { store } from "./store";
-import CardShowFilm from "./CardShowFilm.vue";
-import CardShowTV from "./CardShowTV.vue";
+  import CardShowFilm from "./CardShowFilm.vue";
+  import CardShowTV from "./CardShowTV.vue";
   
   export default {
     name: "MainApp",
@@ -37,6 +37,7 @@ import CardShowTV from "./CardShowTV.vue";
   main {
     background-color: black;
     height: 1500px;
+    overflow-y: auto;
   }
   h2{
     color: rgba(255, 255, 255, 0.695);

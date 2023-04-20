@@ -40,7 +40,7 @@ export default {
       });
     },
     searchTV() {
-      const urlS = store.baseUrl + store.searchTv+ store.api_key + store.endPoint;
+      const urlS = store.baseUrl + store.searchTv + store.api_key + store.endPoint;
       let searched = {};
       let params = {};
       for (let key in store.shows) {
@@ -52,12 +52,15 @@ export default {
         }
       }
       axios.get(urlS, searched).then((res) => {
-        store.shows = store.films.concat(res.data.results);
+        store.shows = res.data.results;
       });
     },
   },
   mounted() {
     store.endPoint = "&language=en-US&query=a&page=1&include_adult=false";
+    this.searchTV();
+    this.searchFilm();
+
   },
 };
 </script>

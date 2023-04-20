@@ -4,9 +4,9 @@ export const store = reactive({
   baseUrl: "https://api.themoviedb.org/3/",
   baseUrlImg: "https://image.tmdb.org/t/p/",
   endPoint: {
-    film: "search/movie",
+    movie: "search/movie",
     tv : "search/tv",
-    mostP: 'movie/popular',
+    mostP: 'movie/popular'
   },
   params: {
     query: '',

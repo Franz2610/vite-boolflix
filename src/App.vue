@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <HeaderApp @onSearch="searchFilm , searchTV"/>
+    <HeaderApp @onSearch="getData"/>
     <MainApp />
   </div>
 </template>
@@ -23,22 +23,25 @@ export default {
   },
   methods: {
     searchFilm() {
-      const url = store.baseUrl + store.endPoint.film ;
+      const url = store.baseUrl + store.endPoint.movie ;
       axios.get(url, { params: store.params}).then((res) => {
-        store.films = res.data.results;
+        this.store.films = res.data.results;
       });
     },
     searchTV() {
       const url = store.baseUrl + store.endPoint.tv;
       axios.get(url, { params: store.params}).then((res) => {
-        store.shows = res.data.results;
-        console.log(res.data);
+        this.store.shows = res.data.results;
       });
+    },
+    getData(){
+      this.searchFilm;
+      this.searchTV;
     }
   },
   mounted() {
-    this.searchTV;
-    this.searchFilm
+    //this.searchFilm;
+    //this.searchTV;
   },
 };
 </script>

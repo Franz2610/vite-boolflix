@@ -7,7 +7,7 @@
           <NavUl />
       </div>
       <div class="">
-          <input type="text" name="searchBar" id="searchBar" placeholder="Cosa ti piacerebbe vedere?" class="rounded-3" v-model="store.params.query" @keyup.enter="$emit('onSearch')" />
+          <input type="text" name="searchBar" id="searchBar" placeholder="Cosa ti piacerebbe vedere?" class="rounded-3" v-model="store.params.query" @keyup.enter="$emit('onSearch')"/>
           <button class="btn btn-danger m-4" @keyup.enter="$emit('onSerch')">Cerca</button>
       </div>
     </header>
@@ -25,11 +25,6 @@ import NavUl from "./NavUl.vue";
       return {
         store,
       };
-    },
-    methods: {
-      search() {
-        this.$emit("onSearch");
-      },
     },
   }
 </script>

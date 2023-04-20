@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <HeaderApp @onSearch="getData"/>
+    <HeaderApp @on-search="getData"/>
     <MainApp />
   </div>
 </template>
@@ -35,13 +35,13 @@ export default {
       });
     },
     getData(){
-      this.searchFilm;
-      this.searchTV;
+      this.searchFilm();
+      this.searchTV();
     }
   },
   mounted() {
-    //this.searchFilm;
-    //this.searchTV;
+    //this.searchFilm();
+    //this.searchTV();
   },
 };
 </script>

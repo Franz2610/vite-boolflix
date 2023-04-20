@@ -3,6 +3,7 @@
         <div class="card">
             <div class="card-head text-center">
                 <h3>{{ film.title }}</h3>
+                <img class="img-card-top" :src="store.baseUrlImg+store.fileSize+film.poster_path" :alt="film.original_title" />
             </div>
             <div class="card-body text-center">
                 <a href="#"> RIPRODUCI</a>
@@ -22,8 +23,8 @@
     data() {
       return {
         store,
-      };
-    },
+      }
+    }
   }
 </script>
   

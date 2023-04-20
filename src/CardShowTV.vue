@@ -1,23 +1,29 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3 mt-2" v-for="card in store.shows" :key="card.shows.id" :card="card.shows">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3 mt-2" v-for="show in store.shows" :key="show.id" :show="show">
         <div class="card">
             <div class="card-head text-center">
-                <h3>{{ card.title }}</h3>
+                <h3>{{ show.title }}</h3>
             </div>
             <div class="card-body text-center">
                 <a href="#"> RIPRODUCI</a>
-                <p>{{ card.original_title}}</p>
-                <p>{{ card.original_language}}</p>
-                <p>{{ card.vote_average}}</p>
+                <p>{{ show.original_title}}</p>
+                <p>{{ show.original_language}}</p>
+                <p>{{ show.vote_average}}</p>
             </div>
         </div>
     </div>
 </template>
   
   <script>
+  import { store } from "./store";
   export default {
     name: "CardShowTV",
-    props: ["card"],
+    props: ["show"],
+    data() {
+      return {
+        store,
+      };
+    },
   }
 </script>
   

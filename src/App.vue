@@ -36,7 +36,7 @@ export default {
         }
       }
       axios.get(urlF, searched).then((res) => {
-        store.card.films = res.data.results;
+        store.films = res.data.results;
       });
     },
     searchTV() {
@@ -44,7 +44,7 @@ export default {
       let searched = {};
       let params = {};
       for (let key in store.shows) {
-        if (store.card.shows[key]) {
+        if (store.shows[key]) {
           params[key] = store.shows[key];
         }
         if (Object.keys(params).length > 0) {

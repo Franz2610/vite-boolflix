@@ -3,7 +3,7 @@ import { reactive } from "vue";
 export const store = reactive({
   baseUrl: "https://api.themoviedb.org/3/",
   baseUrlImg: "https://image.tmdb.org/t/p/",
-  fileSize: '342w',
+  fileSize: 'w342',
   endPoint: {
     movie: "search/movie",
     tv : "search/tv",

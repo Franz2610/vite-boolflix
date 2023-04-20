@@ -3,13 +3,16 @@
         <div class="card">
             <div class="card-head text-center">
                 <h3>{{ film.title }}</h3>
-                <img class="img-card-top" :src="store.baseUrlImg+store.fileSize+film.poster_path" :alt="film.original_title" />
+            </div>
+            <div>
+                <img class="img-card-top" :src="store.baseUrlImg + store.fileSize + film.poster_path" :alt="film.original_title" />
             </div>
             <div class="card-body text-center">
-                <a href="#"> RIPRODUCI</a>
+                <a href="#"> RIPRODUCI </a>
                 <p>{{ film.original_title}}</p>
                 <p>{{ film.original_language}}</p>
                 <p>{{ film.vote_average}}</p>
+                <p>{{ film.overview }}</p>
             </div>
         </div>
     </div>
@@ -30,8 +33,10 @@
   
 <style lang="scss" scoped>
 .card{
-    height: 250px;
+    height: 500px;
+    width: 342px;
     background-color: black;
+    margin-bottom: 50px;
 
     &:hover{
         border: 2px solid white;
@@ -42,10 +47,18 @@
 a{
     color: black;
     text-decoration: none;
+    border: 1px solid red;
     
     &:hover{
         transition: 2s;
-        color: red;
+        color: black;
+        background-color: red;
     }
+}
+img:hover{
+    width: 50%;
+    display: none;
+    transition: 2s;
+    object-fit: cover;
 }
 </style>

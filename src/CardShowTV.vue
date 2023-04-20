@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-head text-center">
                 <h3>{{ show.name }}</h3>
-                <img class="img-card-top" :src="store.baseUrlImg+store.fileSize+show.poster_path" :alt="show.original_name" />
+                <img class="img-card-top" :src=" store.baseUrlImg + store.fileSize + show.poster_path" :alt="show.original_name" />
             </div>
             <div class="card-body text-center">
                 <a href="#"> RIPRODUCI</a>

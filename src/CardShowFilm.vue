@@ -4,14 +4,12 @@
             <div class="card-head text-center">
                 <h3>{{ film.title }}</h3>
             </div>
-            <div>
-                <img class="img-card-top" :src="store.baseUrlImg + store.fileSize + film.poster_path" :alt="film.original_title" />
-            </div>
             <div class="card-body text-center">
                 <a href="#"> RIPRODUCI </a>
+                <img class="img-card-top" :src="store.baseUrlImg + store.fileSize + film.poster_path" :alt="film.original_title" />
                 <p>{{ film.original_title}}</p>
-                <p>{{ film.original_language}}</p>
-                <p>{{ film.vote_average}}</p>
+                <img class="flag"  :src="'../public/images/'+ film.original_language + '.png'" :alt="film.original_languages"/>
+                <p>{{ film.vote_average / 2}} <i class="fa-solid fa-star"></i></p>
                 <p>{{ film.overview }}</p>
             </div>
         </div>
@@ -56,9 +54,13 @@ a{
     }
 }
 img:hover{
-    width: 50%;
     display: none;
     transition: 2s;
-    object-fit: cover;
+}
+.fa-star{
+    color: gold;
+}
+.flag{
+    width: 10%;
 }
 </style>

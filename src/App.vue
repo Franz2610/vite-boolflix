@@ -1,7 +1,9 @@
 <template>
   <div class="wrapper">
     <HeaderApp @on-search="getData"/>
-    <MainApp />
+    <div>
+      <MainApp />
+    </div>
   </div>
 </template>
 
@@ -14,7 +16,7 @@ export default {
   name: "App",
   components: {
     HeaderApp,
-    MainApp
+    MainApp,
 },
   data() {
     return {
@@ -37,11 +39,18 @@ export default {
     getData(){
       this.searchFilm();
       this.searchTV();
-    }
+    },
+   /* getMostP() {
+      const url = store.baseUrl + store.endPoint.mostP ;
+      axios.get(url, { params: store.params}).then((res) => {
+        this.store.films = res.data.results;
+      });
+    },*/
   },
   mounted() {
     //this.searchFilm();
     //this.searchTV();
+    //this.getMostP();
   },
 };
 </script>

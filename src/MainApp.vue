@@ -3,6 +3,9 @@
       <h2 class="text-center">
         COSA VOGLIAMO VEDERE OGGI?
       </h2>
+      <div class="d-flex container">
+        <MostPop />
+      </div>
       <div class="container">
         <div class="row">
           <CardShowFilm/>
@@ -18,12 +21,15 @@
   import { store } from "./store";
   import CardShowFilm from "./CardShowFilm.vue";
   import CardShowTV from "./CardShowTV.vue";
+  import MostPop from "./MostPop.vue";
   
   export default {
     name: "MainApp",
     components: {
     CardShowFilm,
-    CardShowTV
+    CardShowTV,
+    MostPop
+    
 },
     data() {
       return {

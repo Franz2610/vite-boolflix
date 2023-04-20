@@ -8,14 +8,16 @@
             <div class="card-body text-center">
                 <a href="#"> RIPRODUCI</a>
                 <p>{{ show.original_name}}</p>
-                <p>{{ show.original_language}}</p>
-                <p>{{ show.vote_average}}</p>
+                <img class="flag" :src="'../public/'+ show.original_language + '.png'" :alt="film.original_language"/>
+                <p>{{ (show.vote_average / 2 )}} <i class="fa-solid fa-star"></i></p>
+                <p>{{ show.overview }} </p>
             </div>
         </div>
     </div>
 </template>
   
   <script>
+
   import { store } from "./store";
   export default {
     name: "CardShowTV",
@@ -47,5 +49,15 @@ a{
         transition: 2s;
         color: red;
     }
+}
+img:hover{
+    display: none;
+    transition: 2s;
+}
+.fa-star{
+    color: gold;
+}
+.flag{
+    width: 10%;
 }
 </style>

@@ -7,8 +7,8 @@
           <NavUl />
       </div>
       <div class="">
-          <input type="text" name="searchBar" id="searchBar" placeholder="Cosa ti piacerebbe vedere?" class="rounded-3" @input="search" v-model.trim="store.card.query" />
-          <button class="btn btn-danger m-4" @click="search">Cerca</button>
+          <input type="text" name="searchBar" id="searchBar" placeholder="Cosa ti piacerebbe vedere?" class="rounded-3" v-model="store.params.query" @keyup.enter="$emit('onSearch')" />
+          <button class="btn btn-danger m-4" @keyup.enter="$emit('onSerch')">Cerca</button>
       </div>
     </header>
 </template>
@@ -28,7 +28,7 @@ import NavUl from "./NavUl.vue";
     },
     methods: {
       search() {
-        this.$emit("search");
+        this.$emit("onSearch");
       },
     },
   }
@@ -36,5 +36,7 @@ import NavUl from "./NavUl.vue";
 
 
 <style lang="scss" scoped>
-
+header{
+  height: 90px;
+}
 </style>

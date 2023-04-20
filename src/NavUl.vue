@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex">
         <ul v-for="(nav, index) in navs" :key="index" class="justify-content-center align-items-center gap-1">
-            <a class="m-0 text-uppercase d-flex fs-5">{{ nav.name }}</a>
+            <a class="m-0 text-uppercase d-flex fs-5" href="#">{{ nav.name }}</a>
         </ul>
     </div>
 </template>
@@ -28,6 +28,11 @@ import {navUl} from './data'
         text-decoration: none;
         color:red;
         font-size: bold;
+
+
+        &:hover{
+            font-size: large;
+        }
     }
     }
 </style>

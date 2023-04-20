@@ -8,8 +8,8 @@
                 <a href="#"> RIPRODUCI </a>
                 <img class="img-card-top" :src="store.baseUrlImg + store.fileSize + film.poster_path" :alt="film.original_title" />
                 <p>{{ film.original_title}}</p>
-                <img class="flag"  :src="'../public/images/'+ film.original_language + '.png'" :alt="film.original_languages"/>
-                <p>{{ film.vote_average / 2}} <i class="fa-solid fa-star"></i></p>
+                <img class="flag mb-3"  :src="'../public/images/'+ film.original_language + '.png'" :alt="film.original_language"/>
+                <p>{{ film.vote_average / 2}} <img  class="flag" src="../public/images/stellina1.png" alt="stellina"/></p>
                 <p>{{ film.overview }}</p>
             </div>
         </div>

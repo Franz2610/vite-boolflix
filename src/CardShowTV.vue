@@ -8,8 +8,8 @@
             <div class="card-body text-center">
                 <a href="#"> RIPRODUCI</a>
                 <p>{{ show.original_name}}</p>
-                <img class="flag" :src="'../public/'+ show.original_language + '.png'" :alt="film.original_language"/>
-                <p>{{ (show.vote_average / 2 )}} <i class="fa-solid fa-star"></i></p>
+                <img class="flag mb-3" :src="'../public/'+ show.original_language + '.png'" :alt="film.original_language"/>
+                <p>{{ (show.vote_average / 2 )}} <img  class="flag" src="../public/images/stellina1.png" alt="stellina"/></p>
                 <p>{{ show.overview }} </p>
             </div>
         </div>

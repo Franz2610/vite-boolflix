@@ -15,4 +15,12 @@ export const store = reactive({
   },
   shows: [],
   films: [],
+  errors: {
+    tvmovie: '',
+    tvshow: '',
+  },
+  loaders: {
+    tvmovie: false,
+    tvshow: false,
+  }
 });

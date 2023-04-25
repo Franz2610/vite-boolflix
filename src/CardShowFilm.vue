@@ -5,12 +5,19 @@
                 <h3>{{ film.title }}</h3>
             </div>
             <div class="card-body text-center">
-                <a href="#"> RIPRODUCI </a>
+                <a href="#"> RIPRODUCI  <i class="fa-solid fa-circle-play"></i></a>
                 <img class="img-card-top" :src="store.baseUrlImg + store.fileSize + film.poster_path" :alt="film.original_title" />
                 <p>{{ film.original_title}}</p>
-                <img class="flag mb-3"  :src="'../public/images/'+ film.original_language + '.png'" :alt="film.original_language"/>
-                <p>{{ film.vote_average / 2}} <img  class="flag" src="../public/images/stellina1.png" alt="stellina"/></p>
+                <img class="flag"  :src="'../public/images/'+ film.original_language + '.png'" :alt="film.original_language"/>
+                <p> Voto : <i class="fa-solid fa-star" v-for="(n,index) in Math.round(film.vote_average / 2)" :key="index"> </i> </p>
+                <h5>Descrizione</h5>
                 <p>{{ film.overview }}</p>
+                <div class="alert alert-danger" v-if="store.errors.tvmovie">
+                    {{ store.errors.tvmovie }}
+                </div>
+                <div class="alert alert-success" v-if="store.loaders.tvmovie">
+                    Loading...
+                </div>
             </div>
         </div>
     </div>
@@ -35,12 +42,7 @@
     width: 342px;
     background-color: black;
     margin-bottom: 50px;
-
-    &:hover{
-        border: 2px solid white;
-        color: white;
-        transition: 1s;
-    }
+    color: white;
 }
 a{
     color: black;
@@ -55,7 +57,6 @@ a{
 }
 img:hover{
     display: none;
-    transition: 2s;
 }
 .fa-star{
     color: gold;
